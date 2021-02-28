@@ -6,10 +6,10 @@
 
 Features Added:
 
-1) User Login and Session Handling ( authlogic gem )
+- User Login and Session Handling - Authlogic gem
 
-2) Question Create
+- Question Create
 
-3) Comments Create
+- Comments Create
 
-4) Sub-Comments Create
+- Sub-Comments Create
