@@ -1,0 +1,98 @@
+@import "bootstrap";
+
+.card {
+  border: 1px solid #28a745;
+}
+.card-login {
+  margin-top: 50px;
+  padding: 18px;
+  max-width: 40rem;
+  margin-left: 20%;
+}
+
+a {
+  color: black;
+}
+a:link {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+
+.hide {
+  display: none;
+}
+.sub_comments_section {
+  border: 1px solid #73AD21;
+  background-color: lightgray;
+  margin-left: 10%;
+}
+
+.no_bullets {
+  list-style-type: none;
+}
+
+.align_center {
+  margin-left: 40%;
+}
+
+.question-heading {
+  margin-bottom: 70px;
+}
+
+.question_li {
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.question_form {
+  width: 50%;
+  margin-left: 40%;
+  margin-top: 5%;
+}
+
+.question-content {
+  font-size: 20px;
+}
+
+.question_section {
+  margin-left: 20%;
+}
+
+.comments_section {
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+.comment_form {
+  margin-top: 20px;
+  margin-left: 10%;
+}
+.comments_list {
+  margin-left: 5%;
+}
+
+.comment_box {
+  margin-top: 10px;
+}
+
+.sub_comment_data {
+  padding-top: 10px;
+}
+
+.form-title {
+  width: 58%;
+  height: 35px;
+}
+
+.form_heading {
+  font-size: 25px;
+}
+
+.new_question_link {
+  position: absolute;
+  left: 177px;
+}

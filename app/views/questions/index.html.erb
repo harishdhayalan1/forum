@@ -1,0 +1,15 @@
+
+<div class="container">
+<h1 class="align_center question-heading">Questions</h1>
+<% if @questions.present? %>
+  <ul class="list-unstyled center-block question-block">
+  <% @questions.each do |question| %>
+    <li class="align_center question_li">
+      <%= link_to(question.title,"/questions/#{question.id}") %>
+    </li>
+  <% end %>
+  </ul>
+<% else %>
+    <%= link_to('Empty Here ! please create one', questions_new_path, class: "align_center") %>
+<% end %>
+</div>

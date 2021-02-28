@@ -1,0 +1,28 @@
+<% flash.each do |type, msg| %>
+  <div class="alert alert-error">
+    <%= msg %>
+  </div>
+<% end %>
+<div class='container'>
+<h1 class="text-center"> Welcome to Forum</h1>
+  <div class="card card-login text-center">
+<%= form_tag('/signup', method: 'post') do %>
+  <%= label_tag(:first_name, "Name") %>
+  </br>
+  <%= text_field_tag "user[name]" %>
+  </br>
+  <%= label_tag(:email, "Email")%><br>
+  <%= email_field_tag "user[email]" %><br>
+  <%= label_tag(:password, "Password")%><br>
+  <%= password_field_tag "user[password]" %><br>
+  <%= label_tag(:password_confirmation, "Confirm Password")%><br>
+  <%= password_field_tag "user[password_confirmation]" %><br>
+  </br>
+  <%= submit_tag("Signup") %>
+<%end%>
+
+  </br>
+  </br>
+<%= link_to('Already a member? Login!','/login') %>
+  </div>
+</div>

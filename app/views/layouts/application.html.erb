@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forum</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<% if @current_user.present? %>
+<div class="navbar">
+    <% if !(params[:action].eql?("index") && params[:controller].eql?("questions"))  %>
+      <a href="/questions">< Back to Questions</a>
+    <% end %>
+    <% if !params[:action].eql?("new") %>
+      <%= link_to('Create a new question', questions_new_path) %>
+    <% end %>
+  <div>
+    <%= "#{@current_user.name} (#{@current_user.email})" %>
+    <%= link_to('Logout','/logout') %>
+  </div>
+</div>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

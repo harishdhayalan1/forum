@@ -1,0 +1,12 @@
+<div class="align_center">
+  <h1><%= form_title %></h1>
+</div>
+<div class="align_center question_form">
+  <%= form_for @question, as: :question, url: {controller: :questions, action: action } do |f| %>
+    <div class="form_heading">Title</div>
+    <%= f.text_field :title, class: 'form-title' %> </br></br>
+    <div class="form_heading">Content</div>
+    <%= f.text_area :content, :cols => 50, :rows => 10 %> </br></br>
+    <%= f.submit %>&nbsp&nbsp
+  <% end %>
+</div>

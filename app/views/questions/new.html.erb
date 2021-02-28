@@ -1,0 +1,12 @@
+<% if @question.errors.any? %>
+  <div id="alert alert-error alert-dismissible">
+    <h2><%= pluralize(@question.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+    <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+<%= render partial: "form", locals: {action: 'create',form_title: 'Post a Question !'} %>

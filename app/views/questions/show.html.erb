@@ -1,0 +1,38 @@
+
+<h1 class="align_center"> <%= @question.title %></h1>
+<div><p class="align_center">By <%= @question.user.name %></p></div>
+<div class="question_section">
+<p class="question-content"> <%= @question.content %></p>
+<button data-toggle="collapse" data-target="#add_comment">Add Comment</button>
+<div id="add_comment" class="collapse comment_form">
+<%= render partial: "comment_form", locals: {parent_id: @question.id, parent_type: :question, question_id: @question.id} %>
+</div>
+</div>
+
+<% if @main_comments.present? %>
+<div class="comments_section">
+<h3>All Comments</h3>
+<ul class="list-unstyled comments_list">
+<% @main_comments.each do |comment| %>
+  <div class="comment_box">
+  <li><%= comment.content %></li>
+  <div><p>By <%= comment.user.name %></p></div>
+  <% sub_comments = comment.sub_comments.includes(:user) %>
+  <% if sub_comments.present? %>
+    <button data-toggle="collapse" data-target="#sub_comments_section_<%= comment.id %>">Show Replies</button>
+    <div id="sub_comments_section_<%= comment.id %>" class="collapse sub_comments_section">
+      <% sub_comments.each do |sub_comment| %>
+        <p class="sub_comment_data"> <%= sub_comment.content %></p>
+        <div><p>By <%= sub_comment.user.name %></p></div>
+      <% end %>
+    </div>
+  <% end %>
+  <button data-toggle="collapse" data-target="#sub_comment_box_<%= comment.id %>">Add Reply</button>
+  <div id="sub_comment_box_<%= comment.id %>" class="collapse comment_form">
+    <%= render partial: "comment_form", locals: {parent_id: comment.id, parent_type: :comment, question_id: @question.id} %>
+  </div>
+   </div>
+<% end %>
+</ul>
+</div>
+<% end %>
